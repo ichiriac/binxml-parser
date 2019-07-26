@@ -29,6 +29,9 @@ class Reader {
       this._position + size
     )
     this._position += size;
+    if (result.substring(result.length - 1) == '\0') {
+      result = result.substring(0, result.length - 1);
+    }
     return result;
   }  
 
