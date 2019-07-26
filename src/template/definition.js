@@ -14,7 +14,12 @@ class TemplateDefinition {
     // template unique ID
     this.guid = fragment.readBuffer(16);
     // template size
-    this.size = fragment.readUInt(4);
+    this.size = fragment.readInt(4);
+    if (this.size > fragment._buffer.length) {
+      this.guid = null;
+      this.dataOffset = null;
+      this.size = 2;
+    }
     // template contents
     this.node = fragment.readBuffer(this.size);
     // check the EOF
