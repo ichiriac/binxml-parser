@@ -1,0 +1,23 @@
+{
+  "name": "binxml-parser",
+  "version": "1.0.0",
+  "description": "Parse a binxml (binary xml format)",
+  "main": "src/fragment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichiriac/binxml-parser.git"
+  },
+  "keywords": [
+    "binxml",
+    "microsoft"
+  ],
+  "author": "Ioan CHIRIAC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ichiriac/binxml-parser/issues"
+  },
+  "homepage": "https://github.com/ichiriac/binxml-parser#readme"
+}
