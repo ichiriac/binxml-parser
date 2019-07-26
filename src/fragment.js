@@ -11,6 +11,7 @@ class Fragment extends Reader {
    */
   constructor(buffer, chunk /** from evtx-parser */) {
     super(buffer);
+    this.substitutes = [];
     // the full chunk used for extracting names
     this._chunk = chunk;
     // names dictionnary
@@ -34,7 +35,7 @@ class Fragment extends Reader {
       if (!Element)  {
         Element = require('./element');
       }
-      this.node = new Element(this);
+      this.node = new Element(this, mode);
     } else {
       throw new Error('Bad token type : ' + mode);
     }
@@ -48,6 +49,9 @@ class Fragment extends Reader {
       this.names[offset] = new Name(offset, this);
     }
     return this.names[offset];
+  }
+  toString() {
+    return this.node.toString();
   }
 }
 

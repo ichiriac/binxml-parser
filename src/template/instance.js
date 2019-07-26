@@ -14,7 +14,7 @@ class TemplateInstance {
     this.data = new TemplateData(fragment);
   }
   toString() {
-    this.definition.render(this.data);
+    return this.definition.render(this.data);
   }
 }
 

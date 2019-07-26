@@ -1,4 +1,6 @@
 const Reader = require('../reader');
+const Fragment = require('../fragment');
+
 class TemplateDefinition {
   constructor(fragment) {
     // version number
@@ -19,9 +21,16 @@ class TemplateDefinition {
     if (this.node[this.node.length - 1] !== 0x00) {
       throw new Error('Bad EOF token on TemplateDefinition');
     }
+    // @fixme : not implemented yet
+    //this.node = new Fragment(this.node, fragment._chunk);
   }
   render(data) {
-    throw new Error('Not implemented');
+    this.node.substitutes = data;
+    return this.node.toString();
+  }
+  toString() {
+    this.node.substitutes = [];
+    return this.node.toString();
   }
 }
 
